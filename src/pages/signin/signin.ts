@@ -6,6 +6,8 @@ import { Storage } from '@ionic/storage';
 
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
+import {Observable} from "rxjs/Observable";
+import {FeedPage} from "../feed/feed";
 
 @IonicPage()
 @Component({
@@ -18,6 +20,7 @@ export class SigninPage {
     loginForm: FormGroup;
     items: Observable<any>;
     user:any;
+    feedPage = FeedPage;
 
     constructor(public navCtrl: NavController,
                 private formBuilder: FormBuilder,
@@ -27,9 +30,10 @@ export class SigninPage {
             username: [''],
             password: ['']
         });
-        // this.storage.get('username').then((val) => {
-        //     console.log('Your username is', val);
-        // });
+        //How to get localStorage
+        this.storage.get('username').then((val) => {
+            console.log('Your username is', val);
+        });
     }
 
     checkLogin(){
@@ -42,9 +46,9 @@ export class SigninPage {
                     if(this.loginForm.controls.password.value === actions.password){
                         this.storage.set('username',actions.username);
                         //Got TO Feed
+                        this.navCtrl.setRoot(this.feedPage);
                     }else{
                         this.empty = true;
-                        console.log("error");
                     }
                 }
             });
