@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sign In
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="div-logo">
+    <img class="logo" src="assets/imgs/logo_memo.png" alt="Logo MemoVocab App">
+  </div>
+  <form class="list" [formGroup]="loginForm">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input formControlName="username" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password" ></ion-input>
+      <!-- [class.invalid]="!signupForm.controls.confirm_password.valid" -->
+    </ion-item>
+    <div *ngIf="empty" class="alert alert-danger box-msg margin-top-10" role="alert" style="margin-top:10px">
+      <strong>เกิดข้อผิดพลาด!</strong>ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง.
+    </div>
+    <div *ngIf="emptyinput" class="alert alert-danger box-msg margin-top-10" role="alert" style="margin-top:10px">
+      <strong>เกิดข้อผิดพลาด!</strong>กรุณากรอกข้อมูลให้ครบ.
+    </div>
+    <button class="btn-memo" (click)="checkLogin();" ion-button>SignIn</button>
+  </form>
+</ion-content>

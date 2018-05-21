@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            SignUp
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <div class="div-logo">
+            <img class="logo" src="assets/imgs/logo_memo.png" alt="Logo MemoVocab App">
+        </div>
+        <form class="list" [formGroup]="signupForm">
+            <ion-item>
+                <ion-label floating>Username</ion-label>
+                <ion-input formControlName="username" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input type="password" formControlName="password" ></ion-input>
+                <!-- [class.invalid]="!signupForm.controls.confirm_password.valid" -->
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Confirm Password</ion-label>
+                <ion-input type="password" formControlName="confirm_password"   ></ion-input>
+            </ion-item>
+            <div  *ngIf="confirm" class="alert alert-danger box-msg" role="alert">
+                <strong>เกิดข้อผิดพลาด!</strong>รหัสไม่ผ่านไม่เหมือนกัน.
+            </div>
+            <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input type="email" formControlName="email" ngControl="email" ></ion-input>
+            </ion-item>
+            <div  *ngIf="empty" class="alert alert-danger box-msg margin-top-10" role="alert" style="margin-top:10px">
+                <strong>เกิดข้อผิดพลาด!</strong>กรุณากรอกข้อมูลให้ครบ.
+            </div>
+            <button (click)="checkPass()" class="my-btn btn-signin">SignUp</button>
+        </form>
+        <!-- (click)="createUser(user)" ng-valid item-input-has-value -->
+    </ion-list>
+    <footer class="row">
+        <div class="col-6 offset-3 fcontent">
+            <p>MemoVocab &copy; 2018</p>
+            <p>Version 1.0</p>
+        </div>
+    </footer>
+</ion-content>

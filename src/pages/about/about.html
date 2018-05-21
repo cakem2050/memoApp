@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sign In
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="div-logo">
+    <img class="logo" src="assets/imgs/logo_memo.png" alt="Logo MemoVocab App">
+  </div>
+  <form class="list" [formGroup]="loginForm">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input formControlName="username" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password" ></ion-input>
+      <!-- [class.invalid]="!signupForm.controls.confirm_password.valid" -->
+    </ion-item>
+    <button class="btn-memo" ion-button>SignIn</button>
+  </form>
+</ion-content>

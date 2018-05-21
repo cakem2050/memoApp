@@ -1,0 +1,42 @@
+page-register {
+    .alert-head{
+        text-align: center !important;
+        margin-top: 15px !important;
+    }
+    // Footer
+    footer{
+        position: fixed;
+        width: 100%;
+        text-align: center;
+        bottom: 0;
+        // background-image: linear-gradient(to bottom, rgba(248, 248, 248, 0.582), rgba(0, 0, 0, 0.952)), url(../assets/imgs/bg-footer-noise.jpg);
+        // background-size: 40px 500px, 140px 140px;
+        // background-repeat: repeat-x, repeat;
+    }
+    .fcontent p{
+        margin: 0;
+    }
+    .fcontent p:first-of-type{
+        font-size: 10px;
+        margin-top: 5px;
+    }
+    .fcontent p:last-of-type{
+        font-size: 7px;
+        margin-bottom: 5px;
+    }
+    ion-content{
+        background-image: url(../assets/imgs/diamond-bg.png);
+    }
+    ion-item{
+        color: black !important;
+        background-color: inherit !important;
+        padding: 0 10px !important;
+    }
+    .my-btn{
+        background: transparent;
+        border: 2px solid rgba(99, 99, 99, 0.445);
+        margin: 30px 0 0 0 ;
+        width: 100%;
+        padding: 20px 30px;
+    }
+}

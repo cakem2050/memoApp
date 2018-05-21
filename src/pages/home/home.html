@@ -1,0 +1,22 @@
+<ion-header>
+</ion-header>
+
+<ion-content padding>
+  <div class="div-logo">
+    <img class="logo" src="assets/imgs/logo_memo.png" alt="Logo MemoVocab App">
+  </div>
+  <div class="login-content">
+    <button class="my-btn btn-facebook"><i class="fa fa-facebook fa-2x icon" aria-hidden="true"></i>Login with Facebook</button>
+    <button [navPush]="signIn" class="my-btn btn-signin">SignIn</button>
+    <div class="float-right">
+      <a href="#" [navPush]="signup">SignUp</a> |
+    </div>
+  </div>
+  <footer class="row">
+    <div class="col-6 offset-3 fcontent">
+    <p>MemoVocab &copy; 2018</p>
+    <p>Version 1.0</p>
+    </div>
+  </footer>
+  
+</ion-content>

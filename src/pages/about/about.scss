@@ -1,0 +1,85 @@
+page-about {
+
+  .btn-memo{
+    width: 100% !important;
+    padding: 10px 30px;
+    color: white;
+    background: linear-gradient(to left top, rgba(66, 103, 178, 0.801), #4267b2) !important;
+  }
+  .btn-memo:active{
+    width: 100% !important;
+    padding: 10px 30px;
+    color: white;
+    background: linear-gradient(to left top, rgba(42, 61, 110, 0.8), #2b3a6d) !important;
+  }
+  ion-content{
+    background-image: url(/assets/imgs/diamond-bg.png);
+  }
+  form{
+    border-radius: 50px !important;
+  }
+  ion-item{
+    background-color: rgba(255, 255, 255, 0) !important;
+    padding: 20px 20px 0 20px !important;
+  }
+  ion-item:last-of-type{
+    padding: 20px 20px 20px 20px !important;
+  }
+  footer{
+
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    // background-image: linear-gradient(to bottom, rgba(248, 248, 248, 0.582), rgba(0, 0, 0, 0.952)), url(../assets/imgs/bg-footer-noise.jpg);
+    // background-size: 40px 500px, 140px 140px;
+    // background-repeat: repeat-x, repeat;
+  }
+  .div-logo{
+    text-align: center;
+  }
+  .logo{
+    width: 100%;
+    max-width: 670px;
+    margin-top: 100px !important;
+  }
+  .tabs{
+    display: none !important;
+  }
+  .width-100{
+    width: 100%;
+  }
+  .my-btn{
+    background: transparent;
+    border: 2px solid rgba(99, 99, 99, 0.445);
+    margin: 5px 0 ;
+    width: 100%;
+    padding: 20px 30px;
+  }
+  .icon{
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .fa-facebook{
+    color: rgb(255, 255, 255);
+  }
+  .btn-facebook{
+    padding: 10px 30px;
+    color: white;
+    background: linear-gradient(to left top, rgba(66, 103, 178, 0.801), #4267b2);
+  }
+  .fcontent p{
+    margin: 0;
+  }
+  .fcontent p:first-of-type{
+    font-size: 10px;
+    margin-top: 5px;
+  }
+  .fcontent p:last-of-type{
+    font-size: 7px;
+    margin-bottom: 5px;
+  }
+  .login-content{
+    margin-top: 60px !important;
+  }
+}
