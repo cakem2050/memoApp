@@ -33,6 +33,23 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { IonicStorageModule } from '@ionic/storage';
 
 
+
+import { SeleteModePage } from '../pages/selete-mode/selete-mode';
+import { HardModePage } from '../pages/hard-mode/hard-mode';
+import { NormalModePage } from '../pages/normal-mode/normal-mode';
+import { EasyModePage } from '../pages/easy-mode/easy-mode';
+import { AnswerEasyModePage } from '../pages/answer-easy-mode/answer-easy-mode';
+import { AnswerNormalModePage } from '../pages/answer-normal-mode/answer-normal-mode';
+import { AnswerHardModePage } from '../pages/answer-hard-mode/answer-hard-mode';
+
+
+import { ResultPage } from '../pages/result/result';
+
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { Screenshot } from '@ionic-native/screenshot';
+
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyBTgLAvViEXdpt1_SA4-J0J9v8CjuOlIOs",
     authDomain: "memovocab-16b35.firebaseapp.com",
@@ -60,7 +77,15 @@ const firebaseConfig = {
         AddvocabPage,
         AddnewlistPage,
         TabsPage,
-        MyvocabPage
+        MyvocabPage,
+        SeleteModePage,
+        HardModePage,
+        NormalModePage,
+        EasyModePage,
+        AnswerEasyModePage,
+        AnswerNormalModePage,
+        AnswerHardModePage,
+        ResultPage
     ],
     imports: [
         BrowserModule,
@@ -89,11 +114,21 @@ const firebaseConfig = {
         AddvocabPage,
         AddnewlistPage,
         TabsPage,
-        MyvocabPage
+        MyvocabPage,
+        SeleteModePage,
+        HardModePage,
+        NormalModePage,
+        EasyModePage,
+        AnswerEasyModePage,
+        AnswerNormalModePage,
+        AnswerHardModePage,
+        ResultPage
     ],
     providers: [
+        SocialSharing,
         StatusBar,
         SplashScreen,
+        Screenshot,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         FirebaseProvider
     ]

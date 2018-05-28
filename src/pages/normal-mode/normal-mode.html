@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar color="dark">
+    <ion-title style="display:inline-block">Normal Mode : {{Page}}/10</ion-title>
+    <ion-title style="display:inline-block; float:right" end>Score : {{score}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-slides pager>
+    <ion-slide style="background-color:#32db64">
+      <font size="8" style="color:aliceblue">{{normalCode}}</font><br><br>
+      <font size="3" style="color:aliceblue"><ion-icon name="ios-time-outline"></ion-icon></font>
+      <font size="4" style="color:aliceblue"> : {{n}}</font>
+    </ion-slide>
+</ion-slides>       
+</ion-content>

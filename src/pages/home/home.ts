@@ -7,11 +7,13 @@ import {SigninPage} from "../signin/signin";
 import {FeedPage} from "../feed/feed";
 
 import {AngularFireDatabase} from 'angularfire2/database';
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import * as firebase from 'firebase/app';
 import {AngularFireAuth} from 'angularfire2/auth';
 
 import { Storage } from '@ionic/storage';
+
+import {SeleteModePage} from "../selete-mode/selete-mode";
 
 @Component({
     selector: 'page-home',
@@ -21,10 +23,9 @@ export class HomePage {
     aboutPage = AboutPage;
     signup = RegisterPage;
     signIn = SigninPage;
-    feedPage = FeedPage;
 
-    items: Observable<any[]>;
-    displayName;
+    items: Observable<object[]>;
+    // items: any[];
     user;
 
     constructor(public navCtrl: NavController,
@@ -35,19 +36,19 @@ export class HomePage {
         this.afAuth.auth
             .signInWithPopup(new firebase.auth.FacebookAuthProvider())
             .then(res => {
-                let email = res.user.email;
-                console.log(res.user)
-                this.items = this.db.object('/user/'+res.user.G).valueChanges();
-                this.items.subscribe(actions => {
+                console.log(res);
+                this.db.object('/user/'+res.user.G).valueChanges().subscribe(actions => {
                     if(actions === null){
-                        const result2 = this.db.object('user/'+res.user.G).set({
+                        this.db.object('user/'+res.user.G).set({
                             email: res.user.email
                         });
                     }
                 });
                 this.storage.set('username',res.user.G);
+                this.storage.set('name',res.user.displayName);
+
                 //Go to feed
-                this.navCtrl.setRoot(this.feedPage);
+                this.navCtrl.setRoot(SeleteModePage);
             }).catch((error)=>{
             console.log(error)
         });

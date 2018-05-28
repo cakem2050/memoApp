@@ -3,6 +3,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {Validators, FormBuilder, FormGroup, ValidatorFn, AbstractControl} from '@angular/forms';
 import { Storage } from '@ionic/storage';
 
+import {SeleteModePage} from "../selete-mode/selete-mode";
 
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
@@ -45,8 +46,9 @@ export class SigninPage {
                 }else{
                     if(this.loginForm.controls.password.value === actions.password){
                         this.storage.set('username',actions.username);
+                        this.storage.set('name',actions.username);
                         //Got TO Feed
-                        this.navCtrl.setRoot(this.feedPage);
+                        this.navCtrl.setRoot(SeleteModePage);
                     }else{
                         this.empty = true;
                     }

@@ -1,0 +1,95 @@
+
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title style="display:inline-block">Hard Mode : {{Page}}/10</ion-title>
+      <ion-buttons end>
+          <button ion-button>
+              Score : {{score}}
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="hard-bg-style" padding style="text-align: center">
+
+    <font style="color:white" *ngIf="result == 'F' ">Incorrect !</font>
+    <font style="color:white" *ngIf="result == 'T' ">Correct !</font>
+    <font style="color:white" *ngIf="result == 'U' ">Time's Up  !</font>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+              <ion-input [(ngModel)]="answer_hard" type="text" maxlength="8" #input></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+
+          <!-- <ion-col>
+              <ion-list>
+              <ion-item>
+              <ion-input [(ngModel)]="h2" type="text" maxlength="1"></ion-input>
+              </ion-item>
+              </ion-list>
+          </ion-col>
+
+          <ion-col>
+              <ion-list>
+                <ion-item>
+                <ion-input [(ngModel)]="h3" type="text" maxlength="1"></ion-input>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+
+            <ion-col>
+                <ion-list>
+                <ion-item>
+                <ion-input  [(ngModel)]="h4" type="text" maxlength="1"></ion-input>
+                </ion-item>
+                </ion-list>
+            </ion-col>
+
+            <ion-col>
+              <ion-list>
+              <ion-item>
+              <ion-input  [(ngModel)]="h5" type="text" maxlength="1"></ion-input>
+              </ion-item>
+              </ion-list>
+          </ion-col>
+
+          <ion-col>
+            <ion-list>
+            <ion-item>
+            <ion-input  [(ngModel)]="h6" type="text" maxlength="1"></ion-input>
+            </ion-item>
+            </ion-list>
+          </ion-col>
+
+          <ion-col>
+            <ion-list>
+            <ion-item>
+            <ion-input  [(ngModel)]="h7" type="text" maxlength="1"></ion-input>
+            </ion-item>
+            </ion-list>
+          </ion-col>
+
+          <ion-col>
+            <ion-list>
+            <ion-item>
+            <ion-input  [(ngModel)]="h8" type="text" maxlength="1"></ion-input>
+            </ion-item>
+            </ion-list>
+          </ion-col> -->
+
+        </ion-row>
+      </ion-grid>
+      <br>   
+<!-- Show Clock icon and COunt down time -->
+
+    <font size="3" style="color: white"><ion-icon name="ios-time-outline"></ion-icon></font>
+    <font size="4" style="color: white"> : {{n}}</font>
+
+    <br>
+      <button ion-button color="light" full (click)="answerHard(answer_hard)">Confirm</button>
+</ion-content>

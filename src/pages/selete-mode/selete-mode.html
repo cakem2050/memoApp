@@ -1,0 +1,26 @@
+
+<ion-header>
+
+    <ion-navbar color="dark">
+        <ion-buttons >
+            <button ion-button (click)="signOut()">
+                Logout</button>
+        </ion-buttons>
+        <ion-title style="display:inline-block">Select Game Mode</ion-title>
+        <ion-buttons >
+            <button ion-button>
+                {{name}}</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <button ion-button color="primary" full (click)="easyMode()" style="height:33%;  font-size: 50px">Easy</button>
+    <button ion-button color="secondary" full (click)="normolMode()" style="height:33%; font-size: 50px">Normal</button>
+    <button ion-button color="danger" full (click)="hardMode()" style="height:33%; font-size: 50px">Hard</button>
+
+</ion-content>
